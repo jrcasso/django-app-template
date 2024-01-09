@@ -11,26 +11,17 @@ Ensure you have the following prerequisites satisfied:
 
 >Note: This is a VS Code Remote Containers development project: all development is done within a container to reduce initial time-to-develop. Getting this project up and running on your machine can be as simple as pulling down the repository, running the Docker daemon the host machine, opening the project in VS Code, and clicking twice.
 
-
 ## Directions
 
-- Clone the repository
+1. Clone the repository using `git clone git@github.com:<user name>/<repo name>`.
+1. Open the repository in VS Code `code <repo filename>`.
+1. In the bottom-left corner of the VS Code window, click the highlighted "><" button (or navigate to the Remote Containers extension).
+1. From the dropdown, select "Remote Containers: Reopen in Container"
+1. Once the containers are started, you'll be inserted into the Django web application server container. Run `make install; make install-dev` to install all of the packages necessary to develop the application.
+1. Run `cd app/` to move into the top-level `app/` directory, and run `./manage.py migrate` to create the initial database and tables. This will enable Django to start up.
+1. To start the Django web application server, run `./manage.py runserver 0.0.0.0:3000`. The web application will be visible at `http://localhost:3000`.
 
-```sh
-git clone git@github.com:jrcasso/django-app-template
-```
-
-- Open the repository in VS Code
-```sh
-code django-app-template
-```
-
-- Ensure your Docker daemon is running and listening on `/var/run/docker.sock`
-- Ensure you have the necessary environment variables to run this application set in your local environment; they will be used transferred to the remote container environment. You can see which are required in the `.devcontainer/devcontainer.json` file under the `remoteEnv` key.
-- In the bottom-left corner of the VS Code window, click the highlighted "><" button (or navigate to the Remote Containers extension).
-- From the dropdown, select "Remote Containers: Reopen in Container"
-
-That's it.
+You're ready to develop!
 
 ## Development Details
 
