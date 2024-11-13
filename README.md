@@ -1,4 +1,4 @@
-# Django App Template
+# App Template
 
 This repository is a template for a base Django application with a devcontainer setup.
 
